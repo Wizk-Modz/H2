@@ -5,7 +5,6 @@ TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 # opencode, opentui, opencode-pty, bun-pty; post_get_source fails if upstream pins differ.
 TERMUX_PKG_VERSION=(
 	"2.3.0"
-	"2.0.29"
 	"0.5.17"
 	"0.2.0"
 	"0.4.11"
@@ -19,7 +18,6 @@ TERMUX_PKG_SRCURL=(
 )
 TERMUX_PKG_SHA256=(
 	8684fbfb1e03debf1471a49c4baf345c8453b97db83b8d1f225816bd69cf9d5a
-	3d88f662bce9bee4b0af1cf7528f752039dceb4062811c5eae046649ce1dec2d
 	f272f54f96ff230a188c9cf9f593105c6e784f0a14fdbcb7169e523d9c9b7a96
 	7fc1d1ebf4b74cd1b2a83f059afa29a899990b85cf078e73b703004370a52754
 	07ff88c9ee96019dd1691e9ede485e35221c036e599545075587cb85537157b2

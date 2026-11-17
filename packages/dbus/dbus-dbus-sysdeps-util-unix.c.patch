@@ -1,0 +1,36 @@
+--- a/dbus/dbus-sysdeps-util-unix.c
++++ b/dbus/dbus-sysdeps-util-unix.c
+@@ -312,11 +312,16 @@ _dbus_write_pid_to_file_and_pipe (const DBusString *pidfile,
+ dbus_bool_t
+ _dbus_verify_daemon_user (const char *user)
+ {
++/* Termux is a single-user environment. */
++#ifdef __ANDROID__
++  return TRUE;
++#else
+   DBusString u;
+ 
+   _dbus_string_init_const (&u, user);
+ 
+   return _dbus_get_user_id_and_primary_group (&u, NULL, NULL);
++#endif
+ }
+ 
+ 
+@@ -333,6 +338,8 @@ dbus_bool_t
+ _dbus_change_to_daemon_user  (const char    *user,
+                               DBusError     *error)
+ {
++/* Termux is a single-user environment. */
++#ifndef __ANDROID__
+   dbus_uid_t uid;
+   dbus_gid_t gid;
+   DBusString u;
+@@ -376,6 +383,7 @@ _dbus_change_to_daemon_user  (const char    *user,
+                       _dbus_strerror (errno));
+       return FALSE;
+     }
++#endif
+ 
+   return TRUE;
+ }

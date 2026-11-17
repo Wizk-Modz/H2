@@ -1,0 +1,20 @@
+--- a/lib/mkmf.rb
++++ b/lib/mkmf.rb
+@@ -578,7 +578,7 @@ MSG
+     if $universal and (arch_flag = conf['ARCH_FLAG']) and !arch_flag.empty?
+       conf['ARCH_FLAG'] = arch_flag.gsub(/(?:\G|\s)-arch\s+\S+/, '')
+     end
+-    RbConfig::expand("$(CPP) #$INCFLAGS #$CPPFLAGS #$CFLAGS #{opt} #{CONFTEST_C} #{outfile}",
++    RbConfig::expand("$(CPP) #$INCFLAGS #$CPPFLAGS #{opt} #{CONFTEST_C} #{outfile}",
+                      conf)
+   end
+ 
+@@ -2084,7 +2084,7 @@ SRC
+     vpath = $VPATH.dup
+     CONFIG["hdrdir"] ||= $hdrdir
+     mk << %{
+-SHELL = /bin/sh
++SHELL = @TERMUX_PREFIX@/bin/sh
+ 
+ # V=0 quiet, V=1 verbose.  other values don't work.
+ V = #{verbose}

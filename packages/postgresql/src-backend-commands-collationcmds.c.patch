@@ -1,0 +1,11 @@
+--- a/src/backend/commands/collationcmds.c
++++ b/src/backend/commands/collationcmds.c
+@@ -575,7 +575,7 @@ pg_collation_actual_version(PG_FUNCTION_ARGS)
+ 
+ 
+ /* will we use "locale -a" in pg_import_system_collations? */
+-#if !defined(WIN32)
++#if !defined(WIN32) && !defined(__ANDROID__)
+ #define READ_LOCALE_A_OUTPUT
+ #endif
+ 

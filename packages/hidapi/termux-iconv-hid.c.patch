@@ -1,0 +1,22 @@
+--- a/libusb/hid.c
++++ b/libusb/hid.c
+@@ -42,7 +42,7 @@
+ 
+ /* GNU / LibUSB */
+ #include <libusb.h>
+-#if !defined(__ANDROID__) && !defined(NO_ICONV)
++#if (!defined(__ANDROID__) || defined(__TERMUX__)) && !defined(NO_ICONV)
+ #include <iconv.h>
+ #ifndef ICONV_CONST
+ #define ICONV_CONST
+@@ -384,8 +384,8 @@ static void register_read_error(hid_device *dev, const char *error)
+ }
+ 
+ 
+-/* we don't use iconv on Android, or when it is explicitly disabled */
+-#if !defined(__ANDROID__) && !defined(NO_ICONV)
++/* we don't use iconv on non-Termux Android, or when it is explicitly disabled */
++#if (!defined(__ANDROID__) || defined(__TERMUX__)) && !defined(NO_ICONV)
+ 
+ /* iconv implementations */
+ 

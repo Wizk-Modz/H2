@@ -1,0 +1,27 @@
+--- a/lib/hollywood/sshart
++++ b/lib/hollywood/sshart
+@@ -15,7 +15,11 @@
+ # limitations under the License.
+ 
+ command -v ssh-keygen >/dev/null 2>&1 || exit 1
+-command -v ccze >/dev/null 2>&1 || exit 1
++
++_HAS_CCZE=false
++if command -v ccze >/dev/null 2>&1; then
++	_HAS_CCZE=true
++fi
+ 
+ tmpdir=$(mktemp -d)
+ trap "rm -rf $tmpdir 2>/dev/null; pkill -9 -f lib/hollywood/ >/dev/null 2>&1; exit" INT
+@@ -26,6 +30,10 @@
+ 	rm -f "$tmpfile" "$tmpfile.pub"
+ 	wait
+ 	clear
+-	echo "$art" | ccze -A -c default=red
++	if ${_HAS_CCZE}; then
++		echo "$art" | ccze -A -c default=red
++	else
++		echo "$art"
++	fi
+ 	sleep 3 &
+ done

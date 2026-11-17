@@ -1,0 +1,20 @@
+--- a/libusb/CMakeLists.txt
++++ b/libusb/CMakeLists.txt
+@@ -25,7 +25,6 @@ target_link_libraries(hidapi_libusb PRIVATE Threads::Threads)
+ if(HIDAPI_NO_ICONV)
+     target_compile_definitions(hidapi_libusb PRIVATE NO_ICONV)
+ else()
+-    if(NOT ANDROID)
+         include(CheckCSourceCompiles)
+ 
+         if(NOT CMAKE_VERSION VERSION_LESS 3.11)
+@@ -80,9 +79,6 @@ else()
+         if(HIDAPI_ICONV_CONST)
+             target_compile_definitions(hidapi_libusb PRIVATE "ICONV_CONST=const")
+         endif()
+-    else()
+-        # On Android Iconv is disabled on the code level anyway, so no issue;
+-    endif()
+ endif()
+ 
+ set_target_properties(hidapi_libusb

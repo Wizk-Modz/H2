@@ -1,0 +1,11 @@
+--- a/dbus/dbus-sysdeps-unix.c
++++ b/dbus/dbus-sysdeps-unix.c
+@@ -4179,7 +4179,7 @@ _dbus_get_tmpdir(void)
+ 
+       /* And this is the sane fallback. */
+       if (tmpdir == NULL)
+-        tmpdir = "/tmp";
++        tmpdir = "@TERMUX_PREFIX@/tmp";
+     }
+ 
+   _DBUS_UNLOCK (sysdeps);

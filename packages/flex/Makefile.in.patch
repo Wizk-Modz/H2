@@ -1,0 +1,10 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -470,7 +470,6 @@ SUBDIRS = \
+ 	doc \
+ 	examples \
+ 	po \
+-	tests \
+ 	tools
+ 
+ all: all-recursive

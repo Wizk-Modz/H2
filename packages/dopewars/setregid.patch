@@ -1,0 +1,11 @@
+--- a/src/serverside.c
++++ b/src/serverside.c
+@@ -1950,7 +1950,7 @@ void CloseHighScoreFile()
+  */
+ void DropPrivileges()
+ {
+-#ifndef CYGWIN
++#if !defined(CYGWIN) && !defined(__ANDROID__)
+ 
+ #ifdef HAVE_ISSETUGID
+   if (issetugid() == 0) return;

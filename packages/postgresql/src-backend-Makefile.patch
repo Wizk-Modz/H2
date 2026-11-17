@@ -1,0 +1,11 @@
+--- a/src/backend/Makefile
++++ b/src/backend/Makefile
+@@ -57,6 +57,8 @@ endif
+ 
+ override LDFLAGS := $(LDFLAGS) $(LDFLAGS_EX) $(LDFLAGS_EX_BE)
+ 
++LIBS += -landroid-shmem -llog
++
+ ##########################################################################
+ 
+ all: submake-libpgport submake-catalog-headers submake-utils-headers postgres $(POSTGRES_IMP)

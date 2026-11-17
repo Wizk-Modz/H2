@@ -1,0 +1,10 @@
+--- a/src/runtime/cgo/cgo.go
++++ b/src/runtime/cgo/cgo.go
+@@ -14,7 +14,6 @@ package cgo
+ #cgo darwin,!arm64 LDFLAGS: -lpthread
+ #cgo dragonfly LDFLAGS: -lpthread
+ #cgo freebsd LDFLAGS: -lpthread
+-#cgo android LDFLAGS: -llog
+ #cgo !android,linux LDFLAGS: -lpthread
+ #cgo netbsd LDFLAGS: -lpthread
+ #cgo openbsd LDFLAGS: -lpthread

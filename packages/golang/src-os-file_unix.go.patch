@@ -1,0 +1,11 @@
+--- a/src/os/file_unix.go
++++ b/src/os/file_unix.go
+@@ -391,7 +391,7 @@ func tempDir() string {
+ 	dir := Getenv("TMPDIR")
+ 	if dir == "" {
+ 		if runtime.GOOS == "android" {
+-			dir = "/data/local/tmp"
++			dir = "@TERMUX_PREFIX@/tmp"
+ 		} else {
+ 			dir = "/tmp"
+ 		}

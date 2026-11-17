@@ -1,0 +1,12 @@
+--- a/node.gyp
++++ b/node.gyp
+@@ -585,7 +585,8 @@
+       ],
+ 
+       'sources': [
+-        'src/node_main.cc'
++        'src/node_main.cc',
++        'src/getaddrinfo.c'
+       ],
+ 
+       'dependencies': [

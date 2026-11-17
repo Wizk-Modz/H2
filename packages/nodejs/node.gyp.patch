@@ -1,0 +1,21 @@
+--- a/node.gyp
++++ b/node.gyp
+@@ -578,7 +578,7 @@
+           '-Wl,-bnoerrmsg',
+         ],
+       }],
+-      ['OS=="linux" and clang==1', {
++      ['(OS=="linux" or OS=="android") and clang==1', {
+         'libraries': ['-latomic'],
+       }],
+     ],
+@@ -606,7 +606,8 @@
+       ],
+ 
+       'sources': [
+-        'src/node_main.cc'
++        'src/node_main.cc',
++        'src/getaddrinfo.c'
+       ],
+ 
+       'dependencies': [

@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 # opencode, opentui, opencode-pty, bun-pty; post_get_source fails if upstream pins differ.
 TERMUX_PKG_VERSION=(
+	"2.3.0"
 	"2.0.29"
 	"0.5.17"
 	"0.2.0"

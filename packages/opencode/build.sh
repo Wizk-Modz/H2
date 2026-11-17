@@ -18,6 +18,7 @@ TERMUX_PKG_SRCURL=(
 	"https://github.com/sursaone/bun-pty/archive/refs/tags/v${TERMUX_PKG_VERSION[3]}.tar.gz"
 )
 TERMUX_PKG_SHA256=(
+	8684fbfb1e03debf1471a49c4baf345c8453b97db83b8d1f225816bd69cf9d5a
 	3d88f662bce9bee4b0af1cf7528f752039dceb4062811c5eae046649ce1dec2d
 	f272f54f96ff230a188c9cf9f593105c6e784f0a14fdbcb7169e523d9c9b7a96
 	7fc1d1ebf4b74cd1b2a83f059afa29a899990b85cf078e73b703004370a52754
